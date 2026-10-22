@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Mobirise v6.0.6, mobirise.com">
-    <meta name="description" content="Creative CDI - Leading Marketing Research Agency providing market analysis, demand research, and competitor analysis.">
-    <title>Creative CDI - Marketing Research Agency</title>
+    <meta name="description" content="Creative CDI - Modern Data & Marketing Research Agency providing market analysis, demand research, and competitor intelligence.">
+    <title>Creative CDI — Marketing Research Agency</title>
 
-    <!-- Google Font: Epilogue -->
+    <!-- Google Fonts: Plus Jakarta Sans & Epilogue -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Epilogue:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons for Mobirise icons equivalent -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Tailwind CSS CDN -->
@@ -22,41 +21,86 @@
             theme: {
                 extend: {
                     colors: {
-                        'mob-dark': '#232323',
-                        'mob-teal': 'rgb(55, 150, 131)',
-                        'mob-teal-hover': '#2e7a6b',
-                        'mob-amber': '#ffc107',
-                        'mob-amber-hover': '#e0a800',
-                        'mob-info': '#17a2b8',
-                        'mob-info-hover': '#138496',
-                        'mob-gray-bg': '#f8f9fa',
-                        'mob-card-bg': '#ffffff'
+                        'brand-dark': '#0b0f17',
+                        'brand-surface': '#131924',
+                        'brand-accent': '#00dc82',
+                        'brand-accent-hover': '#00b86c',
+                        'brand-amber': '#ffb703',
+                        'brand-amber-hover': '#fb8500',
+                        'brand-cyan': '#06b6d4',
+                        'brand-gray': '#f4f6f9',
+                        'brand-card': '#ffffff'
                     },
                     fontFamily: {
-                        'epilogue': ['Epilogue', 'sans-serif']
+                        'sans': ['Plus Jakarta Sans', 'sans-serif'],
+                        'heading': ['Epilogue', 'sans-serif']
                     }
                 }
             }
         }
     </script>
 
+    <!-- Custom Modern CSS Stylesheet -->
     <style>
         body {
-            font-family: 'Epilogue', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #ffffff;
-            color: #232323;
+            color: #1e293b;
+            overflow-x: hidden;
         }
 
-        /* Custom Hamburger Animation */
+        h1, h2, h3, .font-heading {
+            font-family: 'Epilogue', sans-serif;
+        }
+
+        /* Hero Mesh Background Glow */
+        .hero-glow {
+            background-color: #0b0f17;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(0, 220, 130, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 60%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(255, 183, 3, 0.08) 0%, transparent 50%);
+        }
+
+        /* Modern Hover Effects */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-card {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0, 220, 130, 0.15);
+            border-color: rgba(0, 220, 130, 0.4);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-accent-text {
+            background: linear-gradient(135deg, #00dc82 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hamburger Animation */
         .hamburger span {
             display: block;
-            width: 25px;
-            height: 3px;
-            margin: 4px auto;
+            width: 24px;
+            height: 2px;
+            margin: 5px auto;
             background-color: #ffffff;
             transition: all 0.3s ease-in-out;
+            border-radius: 2px;
         }
-
         .hamburger.active span:nth-child(1) {
             transform: translateY(7px) rotate(45deg);
         }
@@ -67,63 +111,48 @@
             transform: translateY(-7px) rotate(-45deg);
         }
 
-        /* Hero Background with Dark Overlay matching source: rgb(35, 35, 35) */
-        .hero-overlay {
-            background-color: rgba(35, 35, 35, 0.92);
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(55, 150, 131, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(255, 193, 7, 0.08) 0%, transparent 40%);
-        }
-
-        /* Smooth card hover lift */
-        .feature-card {
-            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        /* Modal animation */
+        /* Modal Backdrop */
         .modal-backdrop {
-            background-color: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(4px);
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(8px);
         }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased selection:bg-mob-teal selection:text-white" id="top">
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-accent selection:text-brand-dark" id="top">
 
     <!-- NAVIGATION BAR -->
-    <header class="sticky top-0 z-50 bg-mob-dark text-white shadow-lg border-b border-gray-800 transition-all duration-300">
+    <header class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
                 <!-- Brand Logo / Name -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#top" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white hover:text-mob-teal transition-colors flex items-center gap-2">
-                        <span class="w-3 h-3 rounded-full bg-mob-teal inline-block"></span>
-                        Creative CDI
+                    <a href="#top" class="text-2xl font-extrabold tracking-tight text-white hover:opacity-90 transition-opacity flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-accent to-brand-cyan flex items-center justify-center text-brand-dark text-sm font-black shadow-lg shadow-brand-accent/20">
+                            C
+                        </span>
+                        <span>Creative <span class="text-brand-accent">CDI</span></span>
                     </a>
                 </div>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#top" class="text-mob-info text-base font-medium hover:text-white transition-colors duration-200">Home</a>
-                    <a href="#about" class="text-mob-info text-base font-medium hover:text-white transition-colors duration-200">About</a>
-                    <a href="#research" class="text-mob-info text-base font-medium hover:text-white transition-colors duration-200">Research</a>
-                    <a href="#pricing" class="text-mob-info text-base font-medium hover:text-white transition-colors duration-200">Pricing</a>
+                <nav class="hidden md:flex space-x-10 items-center">
+                    <a href="#top" class="text-slate-300 hover:text-brand-accent text-sm font-semibold transition-colors duration-200">Home</a>
+                    <a href="#about" class="text-slate-300 hover:text-brand-accent text-sm font-semibold transition-colors duration-200">About</a>
+                    <a href="#research" class="text-slate-300 hover:text-brand-accent text-sm font-semibold transition-colors duration-200">Research</a>
+                    <a href="#pricing" class="text-slate-300 hover:text-brand-accent text-sm font-semibold transition-colors duration-200">Pricing</a>
                 </nav>
 
                 <!-- Desktop CTA Button -->
                 <div class="hidden md:flex items-center">
-                    <button onclick="openModal('Get Started')" class="bg-mob-info hover:bg-mob-info-hover text-white font-semibold px-6 py-2.5 rounded-lg text-sm shadow-md transition-all duration-200 hover:shadow-lg active:scale-95">
+                    <button onclick="openModal('Get Started')" class="bg-gradient-to-r from-brand-accent to-brand-cyan hover:from-brand-accent-hover hover:to-brand-cyan text-brand-dark font-bold px-6 py-2.5 rounded-full text-sm shadow-lg shadow-brand-accent/20 transition-all duration-200 hover:shadow-brand-accent/40 active:scale-95">
                         Get Started
                     </button>
                 </div>
 
                 <!-- Mobile Hamburger Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-md text-gray-300 hover:text-white focus:outline-none" aria-label="Toggle navigation">
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle navigation">
                         <div class="hamburger">
                             <span></span>
                             <span></span>
@@ -135,108 +164,118 @@
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-mob-dark border-t border-gray-800 px-4 pt-4 pb-6 space-y-3">
-            <a href="#top" class="mobile-nav-link block px-3 py-2 rounded-md text-mob-info text-lg font-medium hover:bg-gray-800 hover:text-white">Home</a>
-            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-mob-info text-lg font-medium hover:bg-gray-800 hover:text-white">About</a>
-            <a href="#research" class="mobile-nav-link block px-3 py-2 rounded-md text-mob-info text-lg font-medium hover:bg-gray-800 hover:text-white">Research</a>
-            <a href="#pricing" class="mobile-nav-link block px-3 py-2 rounded-md text-mob-info text-lg font-medium hover:bg-gray-800 hover:text-white">Pricing</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-t border-slate-800 px-6 pt-4 pb-6 space-y-4 shadow-2xl">
+            <a href="#top" class="mobile-nav-link block py-2 text-slate-200 text-base font-semibold hover:text-brand-accent">Home</a>
+            <a href="#about" class="mobile-nav-link block py-2 text-slate-200 text-base font-semibold hover:text-brand-accent">About</a>
+            <a href="#research" class="mobile-nav-link block py-2 text-slate-200 text-base font-semibold hover:text-brand-accent">Research</a>
+            <a href="#pricing" class="mobile-nav-link block py-2 text-slate-200 text-base font-semibold hover:text-brand-accent">Pricing</a>
             <div class="pt-2">
-                <button onclick="openModal('Get Started')" class="w-full bg-mob-info hover:bg-mob-info-hover text-white font-semibold py-3 rounded-lg text-center shadow">
+                <button onclick="openModal('Get Started')" class="w-full bg-gradient-to-r from-brand-accent to-brand-cyan text-brand-dark font-bold py-3 rounded-xl text-center shadow-lg">
                     Get Started
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION (#header19-3) -->
-    <section class="relative bg-mob-dark text-white pt-20 pb-24 lg:pt-28 lg:pb-36 hero-overlay overflow-hidden">
+    <!-- HERO SECTION -->
+    <section class="relative bg-brand-dark text-white pt-20 pb-28 lg:pt-32 lg:pb-40 hero-glow overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             
+            <!-- Hero Pill Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-brand-accent text-xs font-bold tracking-widest uppercase mb-8 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                Next-Gen Intelligence Engine
+            </div>
+
             <!-- Hero Heading -->
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                Marketing <br class="hidden sm:inline">Research Agency
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-8 leading-tight">
+                Empowering Growth With <br class="hidden sm:inline">
+                <span class="gradient-accent-text">Precision Research</span>
             </h1>
 
             <!-- Hero Subtitle Text -->
-            <p class="max-w-3xl mx-auto text-base sm:text-lg lg:text-xl text-gray-300 font-light mb-10 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum diam eu tellus cursus, sodales sollicitudin erat pulvinar. Quisque in mauris blandit, cursus ipsum non, hendrerit enim. Nullam fringilla ex sed maximus efficitur. Sed auctor justo elit, ac vestibulum metus semper non.
+            <p class="max-w-3xl mx-auto text-base sm:text-lg lg:text-xl text-slate-400 font-normal mb-12 leading-relaxed">
+                Creative CDI equips global enterprises and high-growth disruptors with real-time market insights, competitive benchmarking, and predictive consumer behavior analysis.
             </p>
 
-            <!-- Hero Primary CTA Button (Yellow / Warning #ffc107) -->
-            <div class="mb-16">
-                <button onclick="openModal('Hero Get Started')" class="bg-mob-amber hover:bg-mob-amber-hover text-mob-dark font-bold text-base sm:text-lg px-8 py-3.5 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
-                    Get Started
+            <!-- Hero Primary CTA Button -->
+            <div class="mb-20 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="openModal('Hero Get Started')" class="w-full sm:w-auto bg-brand-amber hover:bg-brand-amber-hover text-brand-dark font-extrabold text-base px-8 py-4 rounded-xl shadow-xl shadow-brand-amber/20 hover:shadow-brand-amber/40 transition-all duration-200 transform hover:-translate-y-1">
+                    Get Started Today <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
                 </button>
+                <a href="#about" class="w-full sm:w-auto glass-card hover:bg-white/10 text-white font-semibold text-base px-8 py-4 rounded-xl transition-all duration-200">
+                    Learn Methodology
+                </a>
             </div>
 
-            <!-- 4 FEATURE CARDS GRID (Inside Hero Container as per source structure) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 max-w-6xl mx-auto">
+            <!-- 4 FEATURE CARDS GRID -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 
                 <!-- Card 1: Market Analysis -->
-                <div class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 flex flex-col items-center justify-center min-h-[190px]">
-                    <div class="mb-4 text-mob-teal text-4xl">
-                        <i class="fa-solid fa-sack-dollar"></i>
+                <div class="feature-card bg-brand-surface/80 rounded-2xl p-8 text-center border border-slate-800 flex flex-col items-center justify-center min-h-[200px]">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-accent/10 text-brand-accent flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-mob-dark tracking-tight">Market Analysis</h3>
+                    <h3 class="text-lg font-bold text-white tracking-tight">Market Analysis</h3>
                 </div>
 
                 <!-- Card 2: Demand Research -->
-                <div class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 flex flex-col items-center justify-center min-h-[190px]">
-                    <div class="mb-4 text-mob-teal text-4xl">
-                        <i class="fa-solid fa-cart-arrow-down"></i>
+                <div class="feature-card bg-brand-surface/80 rounded-2xl p-8 text-center border border-slate-800 flex flex-col items-center justify-center min-h-[200px]">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-accent/10 text-brand-accent flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-cart-shopping"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-mob-dark tracking-tight">Demand Research</h3>
+                    <h3 class="text-lg font-bold text-white tracking-tight">Demand Research</h3>
                 </div>
 
                 <!-- Card 3: Competitor Analysis -->
-                <div class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 flex flex-col items-center justify-center min-h-[190px]">
-                    <div class="mb-4 text-mob-teal text-4xl">
+                <div class="feature-card bg-brand-surface/80 rounded-2xl p-8 text-center border border-slate-800 flex flex-col items-center justify-center min-h-[200px]">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-accent/10 text-brand-accent flex items-center justify-center text-2xl mb-4">
                         <i class="fa-solid fa-users"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-mob-dark tracking-tight">Competitor Analysis</h3>
+                    <h3 class="text-lg font-bold text-white tracking-tight">Competitor Analysis</h3>
                 </div>
 
                 <!-- Card 4: Research Results -->
-                <div class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 flex flex-col items-center justify-center min-h-[190px]">
-                    <div class="mb-4 text-mob-teal text-4xl">
+                <div class="feature-card bg-brand-surface/80 rounded-2xl p-8 text-center border border-slate-800 flex flex-col items-center justify-center min-h-[200px]">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-accent/10 text-brand-accent flex items-center justify-center text-2xl mb-4">
                         <i class="fa-solid fa-layer-group"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-mob-dark tracking-tight">Research Results</h3>
+                    <h3 class="text-lg font-bold text-white tracking-tight">Research Results</h3>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION (#features19-a) -->
-    <section id="about" class="py-20 lg:py-28 bg-mob-gray-bg border-b border-gray-200">
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 lg:py-32 bg-brand-gray border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left Graphic / Image Visual -->
+                <!-- Left Visual Card -->
                 <div class="lg:col-span-6">
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-mob-dark p-8 sm:p-12 text-white border border-gray-800">
-                        <div class="absolute -top-12 -right-12 w-48 h-48 bg-mob-teal opacity-20 rounded-full blur-2xl"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-brand-dark p-8 sm:p-12 text-white border border-slate-800">
+                        <div class="absolute -top-16 -right-16 w-56 h-56 bg-brand-accent/20 rounded-full blur-3xl"></div>
                         <div class="relative z-10">
-                            <span class="inline-block px-3 py-1 bg-mob-teal/20 text-mob-teal rounded-full text-xs font-bold tracking-wider uppercase mb-4">
-                                Strategic Research & Insights
+                            <span class="inline-block px-3.5 py-1 bg-brand-accent/15 text-brand-accent rounded-full text-xs font-bold tracking-wider uppercase mb-6">
+                                Strategic Intelligence
                             </span>
-                            <h3 class="text-2xl sm:text-3xl font-extrabold mb-4">
+                            <h3 class="text-2xl sm:text-3xl font-extrabold mb-4 leading-snug">
                                 Data-Driven Decision Making For Global Brands
                             </h3>
-                            <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
-                                Creative CDI provides high-precision market analytics, customer behavior forecasting, and actionable intelligence to elevate your business above competitors.
+                            <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
+                                Creative CDI provides high-precision market analytics, customer behavior forecasting, and actionable insights to elevate your strategic advantage.
                             </p>
 
-                            <!-- Key Stat Counters -->
-                            <div class="grid grid-cols-2 gap-6 pt-4 border-t border-gray-800">
+                            <!-- Stat Counters -->
+                            <div class="grid grid-cols-2 gap-6 pt-6 border-t border-slate-800/80">
                                 <div>
-                                    <div class="text-3xl font-black text-mob-amber">98.4%</div>
-                                    <div class="text-xs text-gray-400 font-medium">Accuracy Rate</div>
+                                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-amber">98.4%</div>
+                                    <div class="text-xs text-slate-400 font-medium mt-1">Accuracy Rate</div>
                                 </div>
                                 <div>
-                                    <div class="text-3xl font-black text-mob-teal">1,250+</div>
-                                    <div class="text-xs text-gray-400 font-medium">Reports Delivered</div>
+                                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-accent">1,250+</div>
+                                    <div class="text-xs text-slate-400 font-medium mt-1">Reports Delivered</div>
                                 </div>
                             </div>
                         </div>
@@ -245,38 +284,35 @@
 
                 <!-- Right Content Column -->
                 <div class="lg:col-span-6 space-y-6">
-                    <div class="inline-flex items-center gap-2 text-mob-teal font-bold text-sm tracking-widest uppercase">
+                    <div class="inline-flex items-center gap-2 text-brand-cyan font-bold text-xs tracking-widest uppercase">
                         <i class="fa-solid fa-chart-line"></i> About Creative CDI
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-mob-dark tracking-tight">
-                        Transforming Raw Data Into Strategic Growth
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Transforming Raw Data Into High-Impact Growth Strategies
                     </h2>
-                    <p class="text-gray-600 text-base leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum diam eu tellus cursus, sodales sollicitudin erat pulvinar. Quisque in mauris blandit, cursus ipsum non, hendrerit enim.
-                    </p>
-                    <p class="text-gray-600 text-base leading-relaxed">
-                        Sed auctor justo elit, ac vestibulum metus semper non. Corporate decision makers rely on our comprehensive surveys, quantitative statistics, and qualitative target audience panels.
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        In an ever-evolving market, executive decision-makers rely on our comprehensive survey frameworks, quantitative analytics, and target audience insights to unlock untapped revenue streams.
                     </p>
 
                     <!-- Feature Checkmarks -->
                     <ul class="space-y-3 pt-2">
-                        <li class="flex items-center gap-3 text-mob-dark font-semibold">
-                            <span class="w-6 h-6 rounded-full bg-mob-teal/10 text-mob-teal flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
-                            In-depth target demographic profiling
+                        <li class="flex items-center gap-3 text-slate-800 font-semibold text-sm">
+                            <span class="w-6 h-6 rounded-full bg-brand-accent/20 text-brand-dark flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                            In-depth target demographic profiling & persona modeling
                         </li>
-                        <li class="flex items-center gap-3 text-mob-dark font-semibold">
-                            <span class="w-6 h-6 rounded-full bg-mob-teal/10 text-mob-teal flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
-                            Real-time competitor tracking dashboards
+                        <li class="flex items-center gap-3 text-slate-800 font-semibold text-sm">
+                            <span class="w-6 h-6 rounded-full bg-brand-accent/20 text-brand-dark flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                            Real-time competitor tracking and intelligence dashboards
                         </li>
-                        <li class="flex items-center gap-3 text-mob-dark font-semibold">
-                            <span class="w-6 h-6 rounded-full bg-mob-teal/10 text-mob-teal flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
-                            Custom pricing & elasticity modeling
+                        <li class="flex items-center gap-3 text-slate-800 font-semibold text-sm">
+                            <span class="w-6 h-6 rounded-full bg-brand-accent/20 text-brand-dark flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                            Custom elasticity & price positioning analysis
                         </li>
                     </ul>
 
                     <div class="pt-4">
-                        <button onclick="openModal('Learn More')" class="inline-flex items-center gap-2 bg-mob-dark hover:bg-black text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-all">
-                            Learn More About Us <i class="fa-solid fa-arrow-right text-xs text-mob-teal"></i>
+                        <button onclick="openModal('Learn More')" class="inline-flex items-center gap-3 bg-brand-dark hover:bg-slate-900 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg transition-all">
+                            Learn More About Us <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i>
                         </button>
                     </div>
                 </div>
@@ -285,17 +321,17 @@
         </div>
     </section>
 
-    <!-- RESEARCH SERVICES SECTION (#features20-4) -->
-    <section id="research" class="py-20 lg:py-28 bg-white">
+    <!-- RESEARCH SERVICES SECTION -->
+    <section id="research" class="py-24 lg:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-mob-teal font-bold text-sm tracking-widest uppercase block mb-2">Our Capabilities</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-mob-dark tracking-tight">
+                <span class="text-brand-accent font-bold text-xs tracking-widest uppercase block mb-3">Our Core Methodology</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
                     Comprehensive Research Solutions
                 </h2>
-                <p class="text-gray-600 mt-4 text-base sm:text-lg">
-                    Discover our customized methodologies tailored for startups, enterprise brands, and market disruptors.
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Tailored methodologies designed specifically for scaling startups, enterprise brands, and market disrupters.
                 </p>
             </div>
 
@@ -303,43 +339,49 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Research Card 1 -->
-                <div class="bg-mob-gray-bg rounded-2xl p-8 border border-gray-100 hover:border-mob-teal/30 transition-all duration-300 hover:shadow-xl group">
-                    <div class="w-14 h-14 rounded-xl bg-mob-teal/10 text-mob-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-mob-teal group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-chart-pie"></i>
+                <div class="bg-brand-gray rounded-3xl p-8 border border-slate-200/80 hover:border-brand-accent transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-accent/15 text-brand-dark flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Market Opportunity Sizing</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Accurate TAM, SAM, and SOM calculations to validate new product launches, geography expansion, and capital investments.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold text-mob-dark mb-3">Market Opportunity Sizing</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                        Accurate TAM, SAM, and SOM forecasting to validate new product launches and geographical expansion.
-                    </p>
-                    <a href="javascript:void(0)" onclick="openModal('Market Sizing')" class="inline-flex items-center text-sm font-bold text-mob-teal hover:text-mob-teal-hover gap-2">
+                    <a href="javascript:void(0)" onclick="openModal('Market Sizing')" class="inline-flex items-center text-sm font-bold text-slate-900 hover:text-brand-accent gap-2">
                         Explore Methodology <i class="fa-solid fa-chevron-right text-xs"></i>
                     </a>
                 </div>
 
                 <!-- Research Card 2 -->
-                <div class="bg-mob-gray-bg rounded-2xl p-8 border border-gray-100 hover:border-mob-teal/30 transition-all duration-300 hover:shadow-xl group">
-                    <div class="w-14 h-14 rounded-xl bg-mob-teal/10 text-mob-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-mob-teal group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-user-check"></i>
+                <div class="bg-brand-gray rounded-3xl p-8 border border-slate-200/80 hover:border-brand-accent transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-accent/15 text-brand-dark flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Consumer Sentiment Analysis</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Uncover buying triggers, friction points, and brand perception driver feedback loops through tailored qualitative focus panels.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold text-mob-dark mb-3">Consumer Sentiment Analysis</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                        Uncover latent consumer emotions, buying triggers, and churn causes through AI-enhanced survey loops.
-                    </p>
-                    <a href="javascript:void(0)" onclick="openModal('Consumer Sentiment')" class="inline-flex items-center text-sm font-bold text-mob-teal hover:text-mob-teal-hover gap-2">
+                    <a href="javascript:void(0)" onclick="openModal('Consumer Sentiment')" class="inline-flex items-center text-sm font-bold text-slate-900 hover:text-brand-accent gap-2">
                         Explore Methodology <i class="fa-solid fa-chevron-right text-xs"></i>
                     </a>
                 </div>
 
                 <!-- Research Card 3 -->
-                <div class="bg-mob-gray-bg rounded-2xl p-8 border border-gray-100 hover:border-mob-teal/30 transition-all duration-300 hover:shadow-xl group">
-                    <div class="w-14 h-14 rounded-xl bg-mob-teal/10 text-mob-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-mob-teal group-hover:text-white transition-colors">
-                        <i class="fa-solid fa-chess"></i>
+                <div class="bg-brand-gray rounded-3xl p-8 border border-slate-200/80 hover:border-brand-accent transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-accent/15 text-brand-dark flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors">
+                            <i class="fa-solid fa-chess"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Competitor Intelligence</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Deep benchmark mapping of competitor strategies, feature matrix analysis, pricing variations, and market positioning.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold text-mob-dark mb-3">Competitor Intelligence</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                        Deep benchmark mapping of rival strategies, feature sets, customer ratings, and promotional spends.
-                    </p>
-                    <a href="javascript:void(0)" onclick="openModal('Competitor Intelligence')" class="inline-flex items-center text-sm font-bold text-mob-teal hover:text-mob-teal-hover gap-2">
+                    <a href="javascript:void(0)" onclick="openModal('Competitor Intelligence')" class="inline-flex items-center text-sm font-bold text-slate-900 hover:text-brand-accent gap-2">
                         Explore Methodology <i class="fa-solid fa-chevron-right text-xs"></i>
                     </a>
                 </div>
@@ -348,109 +390,109 @@
         </div>
     </section>
 
-    <!-- PRICING SECTION (#features10-5) -->
-    <section id="pricing" class="py-20 lg:py-28 bg-mob-gray-bg border-t border-gray-200">
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-24 lg:py-32 bg-brand-gray border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-mob-teal font-bold text-sm tracking-widest uppercase block mb-2">Transparent Plans</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-mob-dark tracking-tight">
-                    Flexible Research Pricing
+                <span class="text-brand-accent font-bold text-xs tracking-widest uppercase block mb-3">Transparent Investment</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+                    Flexible Research Plans
                 </h2>
-                <p class="text-gray-600 mt-4 text-base sm:text-lg">
-                    Choose the ideal research package tailored to your organization's scope and growth targets.
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Choose the ideal research framework tailored to your company's operational scope and goals.
                 </p>
             </div>
 
             <!-- Pricing Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                 
-                <!-- Plan 1: Starter -->
-                <div class="bg-white rounded-3xl p-8 shadow-md border border-gray-200 flex flex-col justify-between">
+                <!-- Plan 1: Starter Audit -->
+                <div class="bg-white rounded-3xl p-8 shadow-md border border-slate-200 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-2xl font-bold text-mob-dark mb-2">Starter Audit</h3>
-                        <p class="text-gray-500 text-sm mb-6">Ideal for small businesses & market validation.</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Starter Audit</h3>
+                        <p class="text-slate-500 text-sm mb-6">Ideal for small businesses & niche validation.</p>
                         <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-extrabold text-mob-dark">$499</span>
-                            <span class="text-gray-500 text-sm ml-2">/ report</span>
+                            <span class="text-4xl font-extrabold text-slate-900">$499</span>
+                            <span class="text-slate-500 text-sm ml-2">/ report</span>
                         </div>
-                        <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                        <ul class="space-y-4 mb-8 text-sm text-slate-600">
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> Single Market Niche Analysis
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> Single Niche Market Sizing Analysis
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> Up to 5 Key Competitor Profiles
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> Up to 5 Key Competitor Profiles
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> Executive Summary PDF
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> Executive Summary PDF Report
                             </li>
                             <li class="flex items-center gap-3 opacity-40 line-through">
-                                <i class="fa-solid fa-xmark"></i> Dedicated Strategy Advisory Session
+                                <i class="fa-solid fa-circle-xmark"></i> Dedicated Strategy Consultation
                             </li>
                         </ul>
                     </div>
-                    <button onclick="openModal('Starter Plan')" class="w-full bg-mob-dark hover:bg-black text-white font-bold py-3 rounded-xl transition">
+                    <button onclick="openModal('Starter Plan')" class="w-full bg-brand-dark hover:bg-slate-900 text-white font-bold py-3.5 rounded-xl transition shadow">
                         Select Plan
                     </button>
                 </div>
 
-                <!-- Plan 2: Growth (Featured with Yellow/Amber badge) -->
-                <div class="bg-mob-dark text-white rounded-3xl p-8 shadow-2xl border-2 border-mob-amber relative flex flex-col justify-between transform lg:-translate-y-2">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-mob-amber text-mob-dark font-extrabold text-xs uppercase px-4 py-1.5 rounded-full shadow">
+                <!-- Plan 2: Growth (Featured) -->
+                <div class="bg-brand-dark text-white rounded-3xl p-8 shadow-2xl border-2 border-brand-amber relative flex flex-col justify-between transform lg:-translate-y-3">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-amber to-brand-amber-hover text-brand-dark font-black text-xs uppercase px-5 py-1.5 rounded-full shadow-lg tracking-wider">
                         Most Popular
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold mb-2">Growth Research</h3>
-                        <p class="text-gray-400 text-sm mb-6">For scaling brands seeking competitive dominance.</p>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Growth Research</h3>
+                        <p class="text-slate-400 text-sm mb-6">For scaling brands seeking competitive dominance.</p>
                         <div class="flex items-baseline mb-6">
                             <span class="text-4xl font-extrabold text-white">$1,299</span>
-                            <span class="text-gray-400 text-sm ml-2">/ report</span>
+                            <span class="text-slate-400 text-sm ml-2">/ report</span>
                         </div>
-                        <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                        <ul class="space-y-4 mb-8 text-sm text-slate-300">
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> Comprehensive Regional Market Analysis
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> Regional Market Analysis & Demand Models
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> 15+ Competitor Deep Dives
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> 15+ Competitor Deep-Dive Intelligence
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> Raw Survey Datasets & Excel Pivot Tables
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> Raw Survey Datasets & Pivot Tables
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> 60-min Strategy Consultation
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> 60-min Strategy Advisory Session
                             </li>
                         </ul>
                     </div>
-                    <button onclick="openModal('Growth Plan')" class="w-full bg-mob-amber hover:bg-mob-amber-hover text-mob-dark font-extrabold py-3.5 rounded-xl transition shadow-lg">
+                    <button onclick="openModal('Growth Plan')" class="w-full bg-gradient-to-r from-brand-amber to-brand-amber-hover hover:opacity-95 text-brand-dark font-extrabold py-4 rounded-xl transition shadow-xl shadow-brand-amber/20">
                         Get Started Today
                     </button>
                 </div>
 
                 <!-- Plan 3: Enterprise -->
-                <div class="bg-white rounded-3xl p-8 shadow-md border border-gray-200 flex flex-col justify-between">
+                <div class="bg-white rounded-3xl p-8 shadow-md border border-slate-200 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-2xl font-bold text-mob-dark mb-2">Custom Enterprise</h3>
-                        <p class="text-gray-500 text-sm mb-6">Full suite bespoke analysis & ongoing monitoring.</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Custom Enterprise</h3>
+                        <p class="text-slate-500 text-sm mb-6">Bespoke analysis & ongoing monitoring.</p>
                         <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-extrabold text-mob-dark">$2,999</span>
-                            <span class="text-gray-500 text-sm ml-2">/ quarterly</span>
+                            <span class="text-4xl font-extrabold text-slate-900">$2,999</span>
+                            <span class="text-slate-500 text-sm ml-2">/ quarterly</span>
                         </div>
-                        <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                        <ul class="space-y-4 mb-8 text-sm text-slate-600">
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> Global Multi-Country Research
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> Multi-Country Global Market Research
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> Continuous Competitor Monitoring
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> Continuous Competitor Monitoring
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> Custom Focus Group Panels
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> Custom Focus Group Panels
                             </li>
                             <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-mob-teal"></i> 24/7 Priority Analyst Support
+                                <i class="fa-solid fa-circle-check text-brand-accent"></i> 24/7 Priority Lead Analyst Support
                             </li>
                         </ul>
                     </div>
-                    <button onclick="openModal('Enterprise Plan')" class="w-full bg-mob-dark hover:bg-black text-white font-bold py-3 rounded-xl transition">
+                    <button onclick="openModal('Enterprise Plan')" class="w-full bg-brand-dark hover:bg-slate-900 text-white font-bold py-3.5 rounded-xl transition shadow">
                         Contact Enterprise Team
                     </button>
                 </div>
@@ -459,60 +501,60 @@
         </div>
     </section>
 
-    <!-- FOOTER SECTION (#footer1-7) -->
-    <footer class="bg-mob-dark text-white pt-16 pb-12 border-t border-gray-800">
+    <!-- FOOTER SECTION -->
+    <footer class="bg-brand-dark text-white pt-20 pb-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 
                 <!-- Column 1: Links -->
                 <div>
-                    <h5 class="text-lg font-bold mb-4 text-white">Links</h5>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#top" class="hover:text-mob-teal transition-colors">Home</a></li>
-                        <li><a href="#about" class="hover:text-mob-teal transition-colors">Features</a></li>
-                        <li><a href="#research" class="hover:text-mob-teal transition-colors">Research</a></li>
-                        <li><a href="#about" class="hover:text-mob-teal transition-colors">Team</a></li>
+                    <h5 class="text-base font-bold mb-4 text-white tracking-wider uppercase">Navigation</h5>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#top" class="hover:text-brand-accent transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-brand-accent transition-colors">Features</a></li>
+                        <li><a href="#research" class="hover:text-brand-accent transition-colors">Research Services</a></li>
+                        <li><a href="#about" class="hover:text-brand-accent transition-colors">Team & Insights</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 2: Info -->
                 <div>
-                    <h5 class="text-lg font-bold mb-4 text-white">Info</h5>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#about" class="hover:text-mob-teal transition-colors">About</a></li>
-                        <li><a href="#pricing" class="hover:text-mob-teal transition-colors">Pricing</a></li>
-                        <li><a href="javascript:void(0)" onclick="openModal('Contacts')" class="hover:text-mob-teal transition-colors">Contacts</a></li>
-                        <li><a href="javascript:void(0)" onclick="openModal('Office Location')" class="hover:text-mob-teal transition-colors">Office</a></li>
+                    <h5 class="text-base font-bold mb-4 text-white tracking-wider uppercase">Information</h5>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#about" class="hover:text-brand-accent transition-colors">About Agency</a></li>
+                        <li><a href="#pricing" class="hover:text-brand-accent transition-colors">Pricing Plans</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('Contacts')" class="hover:text-brand-accent transition-colors">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('Office Location')" class="hover:text-brand-accent transition-colors">Global Locations</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Features -->
                 <div>
-                    <h5 class="text-lg font-bold mb-4 text-white">Features</h5>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#research" class="hover:text-mob-teal transition-colors">Market Analysis</a></li>
-                        <li><a href="#research" class="hover:text-mob-teal transition-colors">Demand Research</a></li>
-                        <li><a href="#research" class="hover:text-mob-teal transition-colors">Competitor Analysis</a></li>
-                        <li><a href="#research" class="hover:text-mob-teal transition-colors">Research Results</a></li>
+                    <h5 class="text-base font-bold mb-4 text-white tracking-wider uppercase">Capabilities</h5>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#research" class="hover:text-brand-accent transition-colors">Market Analysis</a></li>
+                        <li><a href="#research" class="hover:text-brand-accent transition-colors">Demand Research</a></li>
+                        <li><a href="#research" class="hover:text-brand-accent transition-colors">Competitor Analysis</a></li>
+                        <li><a href="#research" class="hover:text-brand-accent transition-colors">Custom Frameworks</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 4: About & Social -->
                 <div>
-                    <h5 class="text-lg font-bold mb-3 text-white">About</h5>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum diam eu tellus cursus,
+                    <h5 class="text-base font-bold mb-3 text-white tracking-wider uppercase">Creative CDI</h5>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        Leading market research agency providing market analysis, demand forecasting, and competitor intelligence worldwide.
                     </p>
 
-                    <h5 class="text-base font-bold mb-3 text-white">Social</h5>
+                    <h5 class="text-sm font-bold mb-3 text-white uppercase">Follow Us</h5>
                     <div class="flex items-center space-x-3">
-                        <a href="https://twitter.com/mobirise" target="_blank" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-mob-teal hover:text-white transition-colors">
+                        <a href="https://twitter.com" target="_blank" aria-label="Facebook" class="w-10 h-10 rounded-xl bg-slate-800/80 flex items-center justify-center text-slate-300 hover:bg-brand-accent hover:text-brand-dark transition-all">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                        <a href="https://twitter.com/mobirise" target="_blank" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-mob-teal hover:text-white transition-colors">
-                            <i class="fa-brands fa-twitter"></i>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="w-10 h-10 rounded-xl bg-slate-800/80 flex items-center justify-center text-slate-300 hover:bg-brand-accent hover:text-brand-dark transition-all">
+                            <i class="fa-brands fa-x-twitter"></i>
                         </a>
-                        <a href="https://twitter.com/mobirise" target="_blank" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-mob-teal hover:text-white transition-colors">
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-slate-800/80 flex items-center justify-center text-slate-300 hover:bg-brand-accent hover:text-brand-dark transition-all">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
@@ -521,115 +563,64 @@
             </div>
 
             <!-- Copyright Line -->
-            <div class="pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
-                <p>&copy; 2026 Creative CDI - Marketing Research Agency. All rights reserved.</p>
+            <div class="pt-8 border-t border-slate-800/80 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Creative CDI — Marketing Research Agency. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- MOBIRISE HTML BUILDER BADGE STRIP (Matching source) -->
-    <section class="bg-gray-900 border-t border-gray-800 py-3 text-center text-xs text-gray-400 flex items-center justify-center gap-2">
-        <span>Powered by</span>
-        <a href="https://mobirise.com/html-builder.html" target="_blank" class="text-mob-info font-medium hover:underline">
-            HTML Builder
-        </a>
-    </section>
-
-    <!-- INTERACTIVE MODAL (Contact / Get Started) -->
-    <div id="contact-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop">
-        <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl relative transform transition-all">
-            <button onclick="closeModal()" class="absolute top-5 right-5 text-gray-400 hover:text-mob-dark text-xl font-bold">
+    <!-- INTERACTIVE MODAL DIALOG -->
+    <div id="modal-container" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop">
+        <div class="bg-brand-surface text-white rounded-3xl max-w-md w-full p-8 border border-slate-700 shadow-2xl relative transform transition-all">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            
-            <div class="text-center mb-6">
-                <div class="w-12 h-12 bg-mob-teal/10 text-mob-teal rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </div>
-                <h3 id="modal-title" class="text-2xl font-bold text-mob-dark">Get Started with Creative CDI</h3>
-                <p class="text-gray-500 text-xs mt-1">Fill out the form below to connect with our senior market analyst.</p>
+            <div class="w-12 h-12 rounded-2xl bg-brand-accent/20 text-brand-accent flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-paper-plane"></i>
             </div>
-
-            <form id="modal-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <h3 id="modal-title" class="text-2xl font-bold mb-2">Get Started</h3>
+            <p class="text-slate-400 text-sm mb-6">Enter your email below to connect with our research team.</p>
+            <form onsubmit="event.preventDefault(); closeModal(); alert('Thank you! Our research team will reach out shortly.');" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Your Name</label>
-                    <input type="text" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-mob-teal focus:outline-none text-sm">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Work Email</label>
+                    <input type="email" required placeholder="name@company.com" class="w-full bg-brand-dark border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-accent">
                 </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Work Email</label>
-                    <input type="email" required placeholder="john@company.com" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-mob-teal focus:outline-none text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Project Details / Message</label>
-                    <textarea rows="3" required placeholder="Tell us about your research goals..." class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-mob-teal focus:outline-none text-sm"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-mob-amber hover:bg-mob-amber-hover text-mob-dark font-extrabold py-3 rounded-xl transition shadow-md">
+                <button type="submit" class="w-full bg-gradient-to-r from-brand-accent to-brand-cyan text-brand-dark font-bold py-3.5 rounded-xl shadow-lg hover:opacity-95 transition">
                     Submit Request
                 </button>
             </form>
-
-            <div id="modal-success" class="hidden text-center py-6">
-                <div class="text-mob-teal text-5xl mb-3"><i class="fa-solid fa-circle-check"></i></div>
-                <h4 class="text-xl font-bold text-mob-dark mb-2">Thank You!</h4>
-                <p class="text-gray-600 text-sm mb-6">Your inquiry has been received. Our team will get back to you within 24 hours.</p>
-                <button onclick="closeModal()" class="bg-mob-dark text-white px-6 py-2.5 rounded-xl text-sm font-bold">
-                    Close Window
-                </button>
-            </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <!-- JavaScript Interactions -->
     <script>
-        // Mobile Navigation Toggle Logic
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const hamburger = document.querySelector('.hamburger');
-        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        const hamburger = menuBtn.querySelector('.hamburger');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        menuBtn.addEventListener('click', () => {
             hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
         });
 
-        mobileLinks.forEach(link => {
+        // Close Mobile Menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
                 hamburger.classList.remove('active');
+                mobileMenu.classList.add('hidden');
             });
         });
 
-        // Modal Functionality
-        const modal = document.getElementById('contact-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalForm = document.getElementById('modal-form');
-        const modalSuccess = document.getElementById('modal-success');
-
-        function openModal(topic = 'Get Started') {
-            modalTitle.textContent = topic + ' - Inquiry';
-            modalForm.classList.remove('hidden');
-            modalSuccess.classList.add('hidden');
-            modal.classList.remove('hidden');
+        // Modal Handlers
+        function openModal(topic) {
+            document.getElementById('modal-title').innerText = topic || 'Get Started';
+            document.getElementById('modal-container').classList.remove('hidden');
         }
 
         function closeModal() {
-            modal.classList.add('hidden');
+            document.getElementById('modal-container').classList.add('hidden');
         }
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            modalForm.classList.add('hidden');
-            modalSuccess.classList.remove('hidden');
-        }
-
-        // Close modal on escape key or clicking backdrop
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
     </script>
 </body>
 </html>
